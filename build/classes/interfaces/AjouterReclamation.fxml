@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="694.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="interfaces.AjouterReclamationController">
+   <children>
+      <TextField fx:id="fxobjet" layoutX="573.0" layoutY="288.0" prefHeight="26.0" prefWidth="216.0" />
+      <TextField fx:id="fxdescription" layoutX="573.0" layoutY="379.0" prefHeight="201.0" prefWidth="216.0" />
+      <TextField fx:id="fxid_user" layoutX="573.0" layoutY="249.0" prefHeight="26.0" prefWidth="216.0" />
+      <TextField fx:id="fxdate" layoutX="573.0" layoutY="334.0" prefHeight="26.0" prefWidth="216.0" />
+      <Label layoutX="399.0" layoutY="474.0" prefHeight="26.0" prefWidth="142.0" text="Description:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="399.0" layoutY="334.0" prefHeight="26.0" prefWidth="158.0" text="Date:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="391.0" layoutY="288.0" prefHeight="26.0" prefWidth="115.0" text="Objet:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="390.0" layoutY="245.0" prefHeight="34.0" prefWidth="115.0" text="id_user:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="fxajouterrec" layoutX="582.0" layoutY="179.0" mnemonicParsing="false" onAction="#add" prefHeight="58.0" prefWidth="198.0" text="Ajouter" />
+      <Label layoutX="399.0" layoutY="592.0" prefHeight="44.0" prefWidth="115.0" text="Etat_reclamation:">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="fxetat" layoutX="573.0" layoutY="604.0" prefHeight="44.0" prefWidth="242.0" />
+      <ImageView fitHeight="26.0" fitWidth="34.0" layoutX="599.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../build/classes/Images/ajouter-un-bouton.png" />
+         </image>
+      </ImageView>
+      <AnchorPane prefHeight="694.0" prefWidth="166.0" style="-fx-background-color: #54AFE6;" />
+      <AnchorPane prefHeight="161.0" prefWidth="848.0" style="-fx-background-color: #F68712;">
+         <children>
+            <ImageView fx:id="fximage" fitHeight="160.0" fitWidth="179.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../build/classes/Images/Capture.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
