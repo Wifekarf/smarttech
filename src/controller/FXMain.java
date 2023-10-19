@@ -36,31 +36,36 @@ public class FXMain extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {        
-//        Parent root=FXMLLoader.load(getClass().getResource("FXMLajoutp.fxml"));
-//        Scene scene = new Scene(root);
+//        Parent root1=FXMLLoader.load(getClass().getResource("FXMLajoutp.fxml"));
+//        Scene scene1 = new Scene(root1);
 //        
 //        stage.setTitle("ajouter un produit!");
-//        stage.setScene(scene);
+//        stage.setScene(scene1);
+//        stage.show();
+Parent root2=FXMLLoader.load(getClass().getResource("FXMLmodifierType.fxml"));
+        Scene scene2 = new Scene(root2);
+        
+        stage.setTitle("modifier un produit!");
+        stage.setScene(scene2);
+        stage.show();
+
+
+        
+//        Parent root3=FXMLLoader.load(getClass().getResource("FXMLajoutType.fxml"));
+//        Scene scene3 = new Scene(root3);
+//        
+//        stage.setTitle("ajouter un type!");
+//        stage.setScene(scene2);
+//        stage.show();
+//        
+//        Parent root4=FXMLLoader.load(getClass().getResource("FXMLmodifierType.fxml"));
+//        Scene scene1 = new Scene(root4);
+//        
+//        stage.setTitle("modifier un type!");
+//        stage.setScene(scene1);
 //        stage.show();
         
-        Parent p=FXMLLoader.load(getClass().getResource("FXMLajoutType.fxml"));
-        Scene scene = new Scene(p);
-        
-        stage.setTitle("ajouter un type!");
-        stage.setScene(scene);
-        stage.show();
-        
-//        Servicetype st = new Servicetype();
-//        ListView <Type_produit> type_produits = st.afficheType();
-//        ObservableList<String> type_names = FXCollections.observableArrayList("ID: "," Nom de type: "," Description : " );
-//        // Ajouter les noms d'équipements à la liste observable
-//        type_produits.forEach((type_produit) -> { 
-//            type_names.add("ID: " + type_produit.getIdT()+
-//                                 ", Nom de type: " + type_produit.getNom_type()+
-//                                 ", Description : " + type_produit.getDescription());
-//    });   
-//        // Charger les données dans la ListView
-//        type_produits.setOrientation(Orientation.HORIZONTAL); ;
+//        
     }
 
     /**

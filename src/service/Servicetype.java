@@ -61,14 +61,15 @@ public class Servicetype {
      public List<Type_produit> afficheType() {
          
         List<Type_produit> type_produits = new ArrayList<>();
-        String req = "SELECT * FROM type_produit";
+        String req = "SELECT * FROM `type_produit`";
         
         try{
             Statement stm = cnx.createStatement();
             ResultSet resultSet = stm.executeQuery(req);
             while (resultSet.next()) {
                 Type_produit type_produit = new Type_produit();
-                type_produit.setIdT(resultSet.getInt(1));
+                
+                
                 type_produit.setNom_type(resultSet.getString("nom_type"));
                 type_produit.setDescription(resultSet.getString("description"));
             type_produits.add(type_produit);

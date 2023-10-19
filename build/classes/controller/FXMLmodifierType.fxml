@@ -42,8 +42,8 @@
       <Label layoutX="89.0" layoutY="191.0" text="Description" />
       <TextField fx:id="tfDescription2" layoutX="245.0" layoutY="187.0" />
       <Button fx:id="btnmodifierType" layoutX="291.0" layoutY="245.0" mnemonicParsing="false" text="Modifier" />
-      <Label layoutX="250.0" layoutY="49.0" text="Modifier le type de produit" textFill="#dc3e12" />
+      <Label layoutX="250.0" layoutY="26.0" text="Modifier le type de produit" textFill="#dc3e12" />
       <Label layoutX="95.0" layoutY="106.0" text="Nom de type" />
-      <TextField fx:id="tfnomType" layoutX="245.0" layoutY="93.0" />
+      <TextField fx:id="tfnomType" layoutX="245.0" layoutY="102.0" />
    </children>
 </AnchorPane>

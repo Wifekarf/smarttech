@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import entity.Produits;
+import entity.Type_produit;
 import javafx.scene.Parent;
 import javafx.scene.image.ImageView;
 import service.Serviceproduit;
@@ -58,7 +59,7 @@ public class FXMLajoutpController implements Initializable {
             public void handle(ActionEvent event) {
             Serviceproduit sp = new Serviceproduit();
             try {
-                sp.ajouterProduit(new Produits(tfnbP.getLength(), tfnom_produit.getText(),tfprix.getText(),tfdescription.getText(),tfimage.getText()));
+                sp.ajouterProduit(new Produits(tfnbP.getLength(), tfnom_produit.getText(),tfprix.getText(),tfdescription.getText(),tfimage.getAccessibleText(), (Type_produit) tftype.getPseudoClassStates()));
                 
             } catch (Exception ex) {
                 Logger.getLogger(FXMLajoutpController.class.getName()).log(Level.SEVERE, null, ex);

@@ -5,6 +5,8 @@
  */
 package controller;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+import entity.Produits;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -15,9 +17,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import service.Servicetype;
 import entity.Type_produit;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.geometry.Orientation;
 import javafx.scene.control.Button;
+import service.Serviceproduit;
 /**
  * FXML Controller class
  *
@@ -31,7 +37,7 @@ public class FXMLafficheTypeController implements Initializable {
     private Button btnafficheType;
     @FXML
     private Button btnsuppType;
-    private Servicetype st;
+   
 
     /**
      * Initializes the controller class.
@@ -40,30 +46,14 @@ public class FXMLafficheTypeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         Servicetype st = new Servicetype();
-        st.afficheType();
-    }
-    public void loadData() {
-        afficheType();
-    }
-    @SuppressWarnings("empty-statement")
-    public void afficheType() {
-//        ListView<Type_produit> type_produitView = new ListView<>();
-//        ObservableList<String> type_names = FXCollections.observableArrayList("ID: " + type_produit.getIdT()+
-//                                 ", Nom de type: " + type_produit.getNom_type()+
-//                                 ", Description : " + type_produit.getDescription());
-//        
-        
-        
-        List<Type_produit> type_produits = st.afficheType();
-        ObservableList<String> type_names = FXCollections.observableArrayList("ID: "," Nom de type: "," Description : " );
-        // Ajouter les noms d'équipements à la liste observable
-        type_produits.forEach((type_produit) -> { 
-            type_names.add("ID: " + type_produit.getIdT()+
-                                 ", Nom de type: " + type_produit.getNom_type()+
-                                 ", Description : " + type_produit.getDescription());
-    });   
-        // Charger les données dans la ListView
-        listType.setOrientation(Orientation.HORIZONTAL); ;
+        try {
+            ArrayList<Type_produit> arrayList = (ArrayList<Type_produit>) st.afficheType();
+            ObservableList obs = FXCollections.observableArrayList(arrayList);
+            listType.setItems(obs);
+            
+        } catch (Exception ex) {
+            Logger.getLogger(FXMLafficheTypeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 }
