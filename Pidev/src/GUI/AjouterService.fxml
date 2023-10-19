@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="427.0" prefWidth="607.0"  xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterServiceController">
+   <children>
+      <Text fill="#280303" fontSmoothingType="LCD" layoutX="182.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Poster un service">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Text>
+      <Text layoutX="85.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0"  text="Nom du service">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtfieldLocation" layoutX="233.0" layoutY="192.0" prefHeight="27.0" prefWidth="188.0" />
+      <Text layoutX="94.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Localisation">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtfieldPrix" layoutX="233.0" layoutY="241.0" prefHeight="27.0" prefWidth="188.0" promptText="DT" />
+      <DatePicker fx:id="txtfieldDateAvaliable" layoutX="233.0" layoutY="287.0" prefHeight="25.0" prefWidth="188.0" />
+      <Text layoutX="113.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date du disponibilté">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtfieldNomService" layoutX="233.0" layoutY="103.0" prefHeight="27.0" prefWidth="188.0" />
+      <TextField fx:id="txtfieldCategorie" layoutX="233.0" layoutY="149.0" prefHeight="27.0" prefWidth="188.0" />
+      <Text layoutX="99.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnAddService" layoutX="450.0" layoutY="374.0" mnemonicParsing="false" onAction="#AddService" prefHeight="25.0" prefWidth="110.0"  text="Publier" textFill="#807a7a">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="txtfieldDateCreation" layoutX="233.0" layoutY="331.0" prefHeight="25.0" prefWidth="188.0" />
+      <Text layoutX="82.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date du création">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

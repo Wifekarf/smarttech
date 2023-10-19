@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="444.0" prefWidth="638.0" style="-fx-background-color: #8fbc8f;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.AjouterCategorieController">
+   <children>
+      <Text layoutX="195.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes des categorie disponibles">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TableView fx:id="table" layoutX="89.0" layoutY="98.0" prefHeight="270.0" prefWidth="461.0">
+        <columns>
+          <TableColumn fx:id="idcategoriecolonne" prefWidth="75.0" text="IdCategorie" />
+          <TableColumn fx:id="nomcategoriecolonne" prefWidth="150.0" text="NomCategorie" />
+            <TableColumn fx:id="colonneDescription" prefWidth="235.0" text="DescriptionCategorie" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

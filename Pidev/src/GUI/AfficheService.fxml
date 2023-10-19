@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="649.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficheServiceController">
+   <children>
+      <TableView fx:id="table" layoutX="90.0" layoutY="87.0" prefHeight="271.0" prefWidth="521.0">
+        <columns>
+          <TableColumn fx:id="colonneNomService" prefWidth="104.0" text="Nom du service" />
+          <TableColumn fx:id="colonneCategorie" prefWidth="72.0" text="Categorie" />
+            <TableColumn fx:id="colonneLocalisation" prefWidth="84.0" text="Localisation" />
+            <TableColumn fx:id="colonnePrix" text="Prix" />
+            <TableColumn fx:id="colonneDateAvailable" prefWidth="83.0" text="Date du disponibilté" />
+            <TableColumn fx:id="colonneDatecreation" prefWidth="97.0" text="Date du création" />
+        </columns>
+      </TableView>
+      <Text layoutX="181.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes Des Services Disponible">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
