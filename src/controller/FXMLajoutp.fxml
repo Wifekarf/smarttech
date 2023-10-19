@@ -37,27 +37,22 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="467.0" prefWidth="769.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLajoutpController">
-  <children>
-    <AnchorPane fx:id="ajouterProduit" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <Label layoutX="163.0" layoutY="109.0" text="Prix" />
-            <Label layoutX="141.0" layoutY="152.0" text="Description" />
-            <Label layoutX="164.0" layoutY="340.0" text="Images" />
-            <Label layoutX="138.0" layoutY="62.0" text="Nom produit" />
-            <TextField fx:id="tfnom_produit" layoutX="279.0" layoutY="59.0" />
-            <TextField fx:id="tfprix" layoutX="276.0" layoutY="106.0" />
-            <TextField fx:id="tfdescription" layoutX="277.0" layoutY="149.0" />
-            <Button fx:id="btn1ajout" layoutX="560.0" layoutY="411.0" mnemonicParsing="false" text="Ajouter" />
-            <Label layoutX="111.0" layoutY="214.0" text="Nombres de produits" />
-            <Label layoutX="353.0" layoutY="27.0" prefHeight="18.0" prefWidth="151.0" text="Ajouter de produit" textFill="#d75b18" />
-            <TextField fx:id="tfnbP" layoutX="276.0" layoutY="210.0" />
-            <TextField fx:id="tftype" layoutX="279.0" layoutY="261.0" />
-            <Label layoutX="129.0" layoutY="265.0" text="Type de produit" />
-            <ImageView fx:id="tfimage" fitHeight="150.0" fitWidth="200.0" layoutX="253.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
-      </children>
-    </AnchorPane>
-  </children>
-</VBox>
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="484.0" prefWidth="649.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLajoutpController">
+   <children>
+      <Label layoutX="163.0" layoutY="109.0" text="Prix" />
+      <Label layoutX="141.0" layoutY="152.0" text="Description" />
+      <Label layoutX="164.0" layoutY="340.0" text="Images" />
+      <Label layoutX="138.0" layoutY="62.0" text="Nom produit" />
+      <TextField fx:id="tfnom_produit" layoutX="279.0" layoutY="59.0" />
+      <TextField fx:id="tfprix" layoutX="276.0" layoutY="106.0" />
+      <TextField fx:id="tfdescription" layoutX="277.0" layoutY="149.0" />
+      <Button fx:id="btn1ajout" layoutX="560.0" layoutY="411.0" mnemonicParsing="false" text="Ajouter" />
+      <Label layoutX="111.0" layoutY="214.0" text="Nombres de produits" />
+      <Label layoutX="353.0" layoutY="27.0" prefHeight="18.0" prefWidth="151.0" text="Ajouter de produit" textFill="#d75b18" />
+      <TextField fx:id="tfnbP" layoutX="276.0" layoutY="210.0" />
+      <TextField fx:id="tftype" layoutX="279.0" layoutY="261.0" />
+      <Label layoutX="129.0" layoutY="265.0" text="Type de produit" />
+      <ImageView fx:id="tfimage" fitHeight="150.0" fitWidth="200.0" layoutX="253.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

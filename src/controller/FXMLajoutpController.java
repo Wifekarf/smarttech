@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import entity.Produits;
 import javafx.scene.Parent;
+import javafx.scene.image.ImageView;
 import service.Serviceproduit;
 
 /**
@@ -36,7 +37,7 @@ public class FXMLajoutpController implements Initializable {
     @FXML
     private TextField tfdescription;
     @FXML
-    private TextField tfimage;
+    private ImageView tfimage;
     @FXML
     private Button btn1ajout;
     @FXML

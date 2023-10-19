@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
-import smartech.
+
 
 /**
  * FXML Controller class
@@ -37,6 +37,7 @@ public class FXMLmodifierpController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        btn1modifier.setOnAction(new );
         // TODO
     }    
     
