@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import entity.Produits;
+import models.Produits;
 import DB.MyDB;
 
 public class ProduitsService {

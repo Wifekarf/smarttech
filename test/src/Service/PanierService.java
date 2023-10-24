@@ -1,9 +1,9 @@
 package Service;
 
 import DB.MyDB;
-import entity.Panier;
-import entity.Produits;
-import entity.Utilisateurs;
+import models.Panier;
+import models.Produits;
+import models.Utilisateurs;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
