@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="819.0" style="-fx-background-color: FBECB2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PageacceuilleFXMLController">
+   <children>
+      <Button fx:id="btnajouterservic" layoutX="301.0" layoutY="277.0" mnemonicParsing="false" onAction="#ajouterservice" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Postuler un Service" textFill="WHITE" />
+      <Button fx:id="btnStat" layoutX="301.0" layoutY="359.0" mnemonicParsing="false" onAction="#Stat" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Voir les Meilleurs Services" textFill="WHITE" />
+      <Button fx:id="btnafficheservice" layoutX="301.0" layoutY="195.0" mnemonicParsing="false" onAction="#afficheservice" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Consulter les Services Disponibles" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor></Button>
+      <ImageView fitHeight="150.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/logo%20design.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
