@@ -40,8 +40,8 @@
 <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="408.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLafficheTypeController">
    <children>
       <ListView fx:id="listType" layoutX="15.0" layoutY="79.0" prefHeight="224.0" prefWidth="603.0" />
-      <Button fx:id="btnafficheType" layoutX="301.0" layoutY="321.0" mnemonicParsing="false" text="Afficher" />
-      <Button fx:id="btnsuppType" layoutX="433.0" layoutY="321.0" mnemonicParsing="false" text="Supprimer" />
+      <Button fx:id="btnmodifierType" layoutX="301.0" layoutY="321.0" mnemonicParsing="false" text="modifier" />
+      <Button fx:id="btnsuppType" layoutX="433.0" layoutY="321.0" mnemonicParsing="false" onAction="#supprimerType" text="Supprimer" />
       <Label layoutX="301.0" layoutY="32.0" text="Affichage de type du produit" />
    </children>
 </AnchorPane>

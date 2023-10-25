@@ -5,8 +5,8 @@
  */
 package controller;
 
-import entity.Type_produit;
-import service.Servicetype;
+import models.Type_produit;
+import services.Servicetype;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -36,18 +36,38 @@ public class FXMain extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {        
+  
+
+Parent root = FXMLLoader.load(getClass().getResource("accueil.fxml"));
+        
+        Scene scene = new Scene(root);
+        stage.setTitle("Gestion de produit");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
+
 //        Parent root1=FXMLLoader.load(getClass().getResource("FXMLajoutp.fxml"));
 //        Scene scene1 = new Scene(root1);
 //        
 //        stage.setTitle("ajouter un produit!");
 //        stage.setScene(scene1);
 //        stage.show();
-Parent root2=FXMLLoader.load(getClass().getResource("FXMLmodifierType.fxml"));
-        Scene scene2 = new Scene(root2);
-        
-        stage.setTitle("modifier un produit!");
-        stage.setScene(scene2);
-        stage.show();
+
+//Parent root2=FXMLLoader.load(getClass().getResource("FXMLmodifierType.fxml"));
+//        Scene scene2 = new Scene(root2);
+//        
+//        stage.setTitle("modifier un produit!");
+//        stage.setScene(scene2);
+//        stage.show();
 
 
         
@@ -65,14 +85,4 @@ Parent root2=FXMLLoader.load(getClass().getResource("FXMLmodifierType.fxml"));
 //        stage.setScene(scene1);
 //        stage.show();
         
-//        
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
-}
+//     

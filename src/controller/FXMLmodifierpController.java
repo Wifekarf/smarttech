@@ -14,9 +14,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
-import service.Serviceproduit;
-import entity.Produits;
-import entity.Type_produit;
+import services.Serviceproduit;
+import models.Produits;
+import models.Type_produit;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,16 +34,16 @@ public class FXMLmodifierpController implements Initializable {
     private TextField tfprix2;
     @FXML
     private TextField tfdescription2;
-    @FXML
     private TextField tfimage2;
     @FXML
     private Button btn1modifier;
     @FXML
     private TextField tfnbP;
-    @FXML
     private TextField tftype1;
     @FXML
     private TextField tfNomP;
+    @FXML
+    private Button btnanuulerM;
 
     /**
      * Initializes the controller class.
@@ -55,7 +55,7 @@ public class FXMLmodifierpController implements Initializable {
             public void handle(ActionEvent event) {
                 Serviceproduit sp = new Serviceproduit();
                 try {
-                    sp.modifierProduit(new Produits(tfnbP.getLength(),tfprix2.getText(),tfdescription2.getText(),tfNomP.getText(),tfimage2.getText(), (Type_produit) tftype1.getPseudoClassStates()));
+                    sp.modifierProduit(new Produits(tfnbP.getLength(),tfprix2.getLength(),tfdescription2.getText(),tfNomP.getText(),tfimage2.getAccessibleText(), new Type_produit( Integer.parseInt(tftype1.getText()),"", "")));
                             } catch (Exception ex) {
                 Logger.getLogger(FXMLmodifierpController.class.getName()).log(Level.SEVERE, null, ex);
                     }    

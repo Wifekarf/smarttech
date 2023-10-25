@@ -3,17 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLaffichepController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/entity/Produits.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLajoutTypeController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLmodifierTypeController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/smartech/Smartech.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/service/Servicetype.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/service/Serviceproduit.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMain.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLajoutpController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLmodifierpController.java</file>
-            <file>file:/C:/Users/DELL/Documents/NetBeansProjects/smartech/src/controller/FXMLafficheTypeController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLajoutTypeController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLaffichepController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/models/Produits.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/services/Serviceproduit.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLmodifierTypeController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLajoutp.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLafficheTypeController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLstatController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLafficheType.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/accueil.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLaffichep.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/AccueilController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLstat.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLajoutType.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/models/Type_produit.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/smartech/Smartech.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLmodifierpController.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLmodifierType.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMain.java</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLmodifierp.fxml</file>
+            <file>file:/C:/Users/DELL/Downloads/smartech/src/GUI/FXMLajoutpController.java</file>
         </group>
     </open-files>
 </project-private>

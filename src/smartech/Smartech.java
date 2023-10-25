@@ -5,10 +5,10 @@
  */
 package smartech;
 
-import service.Servicetype;
-import service.Serviceproduit;
-import entity.Produits;
-import entity.Type_produit;
+import services.Servicetype;
+import services.Serviceproduit;
+import models.Produits;
+import models.Type_produit;
 
 import tool.DataSource;
 
@@ -34,11 +34,11 @@ public class Smartech {
         produitToUpdate.setNom_produit("tomate");
         sp.modifierProduit(produitToUpdate);
         
-        Produits produitToDelete = new Produits();
-        produitToDelete.setPrix("1");
+        int produitToDelete = 5;
+        
         
         sp.supprimerProduit(produitToDelete);
-        sp.ajouterProduit(p);
+        //sp.ajouterProduit(p);
         //affiche produit
         System.out.println(sp.afficheProduit());
         

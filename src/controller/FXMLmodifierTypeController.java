@@ -5,7 +5,7 @@
  */
 package controller;
 
-import entity.Type_produit;
+import models.Type_produit;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,7 +18,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import service.Servicetype;
+import services.Servicetype;
 
 /**
  * FXML Controller class

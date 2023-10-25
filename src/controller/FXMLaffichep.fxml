@@ -37,11 +37,11 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="375.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLaffichepController">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLaffichepController">
    <children>
       <ListView fx:id="listProduit" layoutX="62.0" layoutY="66.0" prefHeight="226.0" prefWidth="482.0" />
       <Button fx:id="btnafficheProduit" layoutX="174.0" layoutY="300.0" mnemonicParsing="false" text="Afficher" />
-      <Button fx:id="btnsuppProduit" layoutX="324.0" layoutY="300.0" mnemonicParsing="false" text="Supprimer" />
+      <Button fx:id="btnsuppProduit" layoutX="324.0" layoutY="300.0" mnemonicParsing="false" onAction="#supprimerProduit" text="Supprimer" />
       <Label layoutX="232.0" layoutY="31.0" text="Affichage de liste du produit" />
    </children>
 </AnchorPane>
