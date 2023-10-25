@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="433.0" prefWidth="649.0" style="-fx-background-color: #8fbc8f;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AfficherCommadesController">
+   <children>
+      <TableView fx:id="table" layoutX="90.0" layoutY="87.0" prefHeight="271.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="IdCommande" prefWidth="116.0" text="IdCommande" />
+            <TableColumn fx:id="idUser" prefWidth="94.0" text="idUser" />
+            <TableColumn fx:id="Service" prefWidth="115.0" text="Service" />
+            <TableColumn fx:id="Date" prefWidth="113.0" text="Date" />
+        </columns>
+      </TableView>
+      <Text layoutX="199.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listes Des Commandes">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Button fx:id="AnnulerAffichage" layoutX="279.0" layoutY="381.0" mnemonicParsing="false" onAction="#AnnulerAffi" text="Annuler" />
+   </children>
+</AnchorPane>

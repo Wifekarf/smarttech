@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="590.0" prefWidth="819.0" style="-fx-background-color: #FEF9E7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interfaces.AjouterFactureController">
+   <children>
+      <TextField fx:id="MontantField" layoutX="304.0" layoutY="324.0" prefHeight="31.0" prefWidth="218.0" />
+      <DatePicker fx:id="DateField" layoutX="301.0" layoutY="248.0" />
+      <Label layoutX="151.0" layoutY="321.0" text="Montant :">
+         <font>
+            <Font name="Agency FB Bold" size="28.0" />
+         </font></Label>
+      
+      <Label layoutX="122.0" layoutY="172.0" text="ID Commande : ">
+         <font>
+            <Font name="Agency FB Bold" size="28.0" />
+         </font></Label>
+      <Button fx:id="AjoutFacture" layoutX="317.0" layoutY="396.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #D4AC0D; -fx-background-radius: 10;" text="Comfimer" textFill="#fdfefe" />
+      <Button fx:id="AnnulerFacture" layoutX="659.0" layoutY="523.0" mnemonicParsing="false" onAction="#retourPage2" prefHeight="34.0" prefWidth="136.0" style="-fx-background-color: #D4AC0D; -fx-background-radius: 10;" text="Annuler" textFill="#fdfefe" />
+      <Label layoutX="281.0" layoutY="39.0" text="Ajouter Facture" textFill="#0c6bd0">
+         <font>
+            <Font name="Bernard MT Condensed" size="45.0" />
+         </font></Label>
+      <Label layoutX="163.0" layoutY="247.0" prefHeight="34.0" prefWidth="65.0" text="Date :">
+         <font>
+            <Font name="Agency FB Bold" size="28.0" />
+         </font></Label>
+      <ComboBox fx:id="CommandeIdField" layoutX="301.0" layoutY="173.0" prefHeight="31.0" prefWidth="218.0" />
+      <Button fx:id="AfficherFactures" layoutX="89.0" layoutY="396.0" mnemonicParsing="false" onAction="#AffichFactures" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #D4AC0D; -fx-background-radius: 10;" text="Liste Factures" textFill="#fdfefe" />
+      <Button fx:id="TelechargerPDF" layoutX="571.0" layoutY="396.0" mnemonicParsing="false" onAction="#telechargerPDF" prefHeight="50.0" prefWidth="192.0" style="-fx-background-color: #D4AC0D; -fx-background-radius: 10;" text="Télécharger PDF" textFill="#fdfefe" />
+   </children>
+</AnchorPane>
