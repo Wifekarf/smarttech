@@ -9,7 +9,6 @@ package GUI;
 
 
 import com.itextpdf.text.BaseColor;
-import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
@@ -95,7 +94,7 @@ public class FXMLajoutpController implements Initializable {
                 
             Serviceproduit sp = new Serviceproduit();
             try {
-                sp.ajouterProduit(new Produits(tfnbP.getLength(), tfnom_produit.getText(),tfprix.getText(),tfdescription.getText(),tfimage.getAccessibleText(), new Type_produit( Integer.parseInt(tftype.getText()),"", "")));
+                sp.ajouterProduit(new Produits(tfnbP.getLength(),tfprix.getLength(), tfnom_produit.getText(),tfdescription.getText(),tfimage.getAccessibleText(), new Type_produit( Integer.parseInt(tftype.getText()),"", "")));
                 
             } catch (Exception ex) {
                 Logger.getLogger(FXMLajoutpController.class.getName()).log(Level.SEVERE, null, ex);

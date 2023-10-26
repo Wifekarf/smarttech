@@ -14,7 +14,7 @@ import java.net.URL;
  */
 public class Produits {
     private int idP;
-    private String prix;
+    private int prix;
     private String description;
     private String nom_produit;
     private String image;
@@ -24,7 +24,7 @@ public class Produits {
     public Produits() {
     }
 
-    public Produits(int nbP, String prix, String description, String nom_produit, String image, Type_produit tp) {
+    public Produits(int nbP, int prix, String description, String nom_produit, String image, Type_produit tp) {
         this.nbP = nbP;
         this.prix = prix;
         this.description = description;
@@ -33,7 +33,7 @@ public class Produits {
         this.tp = tp;
     }
     
-    public Produits(int idP, int nbP, String prix, String description, String nom_produit, String image, Type_produit tp) {
+    public Produits(int idP, int nbP, int prix, String description, String nom_produit, String image, Type_produit tp) {
         this.idP = idP;
         this.nbP = nbP;
         this.prix = prix;
@@ -53,11 +53,11 @@ public class Produits {
         this.idP = idP;
     }
 
-    public String getPrix() {
+    public int getPrix() {
         return prix;
     }
 
-    public void setPrix(String prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
     }
     

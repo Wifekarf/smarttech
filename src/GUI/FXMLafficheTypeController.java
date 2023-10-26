@@ -5,29 +5,30 @@
  */
 package GUI;
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
-import models.Produits;
 import java.net.URL;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import services.Servicetype;
-import models.Type_produit;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import models.Type_produit;
+
+import services.Servicetype;
+import models.Type_produit;
 import services.Serviceproduit;
 /**
  * FXML Controller class
@@ -37,11 +38,14 @@ import services.Serviceproduit;
 public class FXMLafficheTypeController implements Initializable {
 
     @FXML
-    private ListView<?> listType;
+    private ListView<Type_produit> listType;
     @FXML
     private Button btnsuppType;
     @FXML
     private Button btnModifierType;
+     private Button btnupdate;
+     private Type_produit selectedTypeTODelete;
+     private Servicetype st;
    
 
     /**
@@ -50,16 +54,59 @@ public class FXMLafficheTypeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        Servicetype st = new Servicetype();
+    Servicetype st = new Servicetype();
         try {
-            ArrayList<Type_produit> arrayList = (ArrayList<Type_produit>) st.afficheType();
-            ObservableList obs = FXCollections.observableArrayList(arrayList);
+            ArrayList<Type_produit> arrayList =(ArrayList<Type_produit>)  st.afficheType();
+            ObservableList<Type_produit> obs = FXCollections.observableArrayList(arrayList);
             listType.setItems(obs);
             
+//            List<Produits> arrayList =  sp.afficheProduit();
+//            ObservableList<Produits> obs = FXCollections.observableArrayList(arrayList);
+//            listProduit.setItems(obs);
+            
+            listType.setOnMouseClicked(this::handleListViewSelection);
+      
+            btnsuppType.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            if (selectedTypeTODelete != null) {
+                try {
+                 st.supprimerType(5);
+                obs.remove(selectedTypeTODelete);
+                selectedTypeTODelete= null;
+                } catch (SQLException ex) {
+                 Logger.getLogger(FXMLafficheTypeController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            }
+        }
+       });
+        btnupdate.setOnAction(event -> {
+                // Clear the existing data in the ListView
+                obs.clear();
+
+                // Load the updated data from the database
+                List<Type_produit> updatedList = null;
+                try {
+                    updatedList = st.afficheType();
+                } catch (Exception ex) {
+                    Logger.getLogger(FXMLafficheTypeController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                obs.addAll(updatedList);
+            });
+
         } catch (Exception ex) {
             Logger.getLogger(FXMLafficheTypeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    
+
         
+    }
+    private void handleListViewSelection(MouseEvent event) {
+        Type_produit selectedType_produit = (Type_produit) listType.getSelectionModel().getSelectedItem();
+        if (selectedType_produit != null) {
+            selectedType_produit = selectedType_produit;
+            //selectedLivraisonToModify = selectedLivraison;
+        }
     }
     @FXML
     private void ModifierType(ActionEvent event) {

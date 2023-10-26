@@ -24,21 +24,27 @@ public class Smartech {
         Servicetype st = new Servicetype();
        
         Type_produit t1 = new Type_produit(1,"math","calcul et analyse");
-        Produits p = new Produits(1,25,"10.215f","description","IOS","image",t1);
+        Produits p = new Produits(1,25,10,"description","IOS","image",t1);
         sp.ajouterProduit(p);
         
 //modifier produit        
         Produits produitToUpdate = new Produits();
-        produitToUpdate.setPrix("50");
+        produitToUpdate.setPrix(50);
         produitToUpdate.setDescription("description12234");
         produitToUpdate.setNom_produit("tomate");
         sp.modifierProduit(produitToUpdate);
-        
+        //supprimer produit
         int produitToDelete = 5;
+        try {
+            sp.supprimerProduit(produitToDelete);
+            System.out.println("Produit est supprimée");
+        } catch (Exception e) {
+            System.out.println("erreur de supprission");
+        }
         
         
-        sp.supprimerProduit(produitToDelete);
-        //sp.ajouterProduit(p);
+        
+        
         //affiche produit
         System.out.println(sp.afficheProduit());
         
@@ -52,11 +58,13 @@ public class Smartech {
         typeToUpdate.setNom_type("nom_type");
         st.modifierType(typeToUpdate);
         //supprimer type
-        Type_produit typeToDelete = new Type_produit();
-        typeToDelete.setNom_type("nom_type");
-        
-        
-        st.supprimerType(typeToDelete);
+        int typeToDelete = 1 ;
+        try {
+            st.supprimerType(typeToDelete);
+            System.out.println("type est supprimée");
+        } catch (Exception e) {
+            System.out.println("erreur de supprission");
+        }
         //afficher type
         System.out.println(st.afficheType());
       

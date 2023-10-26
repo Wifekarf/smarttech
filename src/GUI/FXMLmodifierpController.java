@@ -59,7 +59,7 @@ public class FXMLmodifierpController implements Initializable {
             public void handle(ActionEvent event) {
                 Serviceproduit sp = new Serviceproduit();
                 try {
-                    sp.modifierProduit(new Produits(tfnbP.getLength(),tfprix2.getText(),tfdescription2.getText(),tfNomP.getText(),tfimage2.getText(), (Type_produit) tftype1.getPseudoClassStates()));
+                    sp.modifierProduit(new Produits(tfnbP.getLength(),tfprix2.getLength(),tfdescription2.getText(),tfNomP.getText(),tfimage2.getText(), (Type_produit) tftype1.getPseudoClassStates()));
                             } catch (Exception ex) {
                 Logger.getLogger(FXMLmodifierpController.class.getName()).log(Level.SEVERE, null, ex);
                     }    

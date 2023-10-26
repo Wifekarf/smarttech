@@ -36,7 +36,7 @@ public class Serviceproduit {
         try {
             PreparedStatement preparedStatement = cnx.prepareStatement(req);
            // preparedStatement.setInt(1, produit.getId());
-            preparedStatement.setString(1, produit.getPrix()); 
+            preparedStatement.setInt(1, produit.getPrix()); 
             preparedStatement.setString(2, produit.getDescription());
             preparedStatement.setString(3, produit.getImage());
             preparedStatement.setString(4, produit.getNom_produit());
@@ -64,7 +64,7 @@ public class Serviceproduit {
         while (resultSet.next()) {
             Produits produit = new Produits();
             
-            produit.setPrix(resultSet.getString("Prix"));
+            produit.setPrix(resultSet.getInt("Prix"));
             produit.setDescription(resultSet.getString("Description"));
             produit.setImage(resultSet.getString("image"));
             produit.setNom_produit(resultSet.getString("Nom_produit"));
@@ -86,7 +86,7 @@ public class Serviceproduit {
         String req =" UPDATE `produits` SET`prix`=?,`description`=?,`image`=?,`nom_produit`=? WHERE idP=?";
         try{
             PreparedStatement preparedStatement = cnx.prepareStatement(req);
-            preparedStatement.setString(1,p.getPrix()); 
+            preparedStatement.setInt(1,p.getPrix()); 
             preparedStatement.setString(2,p.getDescription());
             preparedStatement.setString(3,p.getImage());
             preparedStatement.setString(4,p.getNom_produit());
@@ -107,23 +107,15 @@ public class Serviceproduit {
         }
         
     
-    public void supprimerProduit(int idProduit) {
+    public void supprimerProduit(int idProduit) throws SQLException {
         String req = "DELETE FROM `produits` WHERE idP=?";
         
-        try{
+        
             PreparedStatement preparedStatement = cnx.prepareStatement(req);
             preparedStatement.setInt(1,idProduit);
-            int rowsDeleted = preparedStatement.executeUpdate();
-        if (rowsDeleted > 0) {
-            System.out.println("produit supprimée");
-            }
-        else{
-            System.out.println(" Aucune produit avec cette ID ");
-        }
-        }
-        catch(SQLException ex){
-            Logger.getLogger(Serviceproduit.class.getName()).log(Level.SEVERE,null,ex);
-        }
+            preparedStatement.executeUpdate();
+        
+        
     }
 
     public Produits getproduitById(int produitId) {
@@ -136,7 +128,7 @@ public class Serviceproduit {
         if (resultSet.next())
         {produit = new Produits();
         
-        produit.setPrix(resultSet.getString("prix"));
+        produit.setPrix(resultSet.getInt("prix"));
         produit.setDescription(resultSet.getString("description"));
         produit.setImage(resultSet.getString("image"));
         produit.setNom_produit(resultSet.getString("nom_produit"));

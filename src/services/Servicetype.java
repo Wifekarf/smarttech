@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import models.Produits;
 import tool.DataSource;
 
 /**
@@ -63,45 +64,34 @@ public class Servicetype {
         List<Type_produit> type_produits = new ArrayList<>();
         String req = "SELECT * FROM `type_produit`";
         
-        try{
-            Statement stm = cnx.createStatement();
-            ResultSet resultSet = stm.executeQuery(req);
-            while (resultSet.next()) {
-                Type_produit type_produit = new Type_produit();
-                
-                
-                type_produit.setNom_type(resultSet.getString("nom_type"));
-                type_produit.setDescription(resultSet.getString("description"));
+        try{ 
+        Statement stm = cnx.createStatement();
+        ResultSet resultSet = stm.executeQuery(req);
+        while (resultSet.next()) {
+            Type_produit type_produit  = new Type_produit();
+            
+            type_produit.setNom_type(resultSet.getString("type produit"));
+            type_produit.setDescription(resultSet.getString("Description"));
             type_produits.add(type_produit);
-            }
-        
+        }
     }
-        
-        
-     catch (SQLException ex) {
-         Logger.getLogger(Servicetype.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    return type_produits;
+    catch(SQLException ex){
+        Logger.getLogger(Servicetype.class.getName()).log(Level.SEVERE,null,ex);
+    
+    }return type_produits;
+       
     }
     
 
-    public void supprimerType(Type_produit type_produit){
+    public void supprimerType(int  idType) throws SQLException{
         String req = "DELETE FROM `type_produit` WHERE IdT=?";
-               try {
+               
             PreparedStatement preparedStatement = cnx.prepareStatement(req);
-             preparedStatement.setInt(1,type_produit.getIdT());
-          
-             int rowsDeleted = preparedStatement.executeUpdate();
-        if (rowsDeleted > 0) {
-            System.out.println("type supprimer avec succée!");
-        } else {
-            System.out.println(" Aucune type avec cette ID ");
-        }
-    } catch (SQLException ex) {
-        Logger.getLogger(Servicetype.class.getName()).log(Level.SEVERE, null, ex);
-    }
+            preparedStatement.setInt(1,idType);
+            preparedStatement.executeUpdate();
     
     }
+    
     
     public void modifierType(Type_produit type_produit) {
     
