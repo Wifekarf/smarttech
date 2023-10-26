@@ -11,29 +11,25 @@ public class Panier {
     private List<Produits> cartItems; 
     private double prixTotale;
     private Utilisateurs utilisateur; 
-    private int panierId; 
+    private int panierId;
     private int quantity;
 
-    /**
-     *
-     * @param cartItems
-     * @param utilisateur
-     * @param panierId
-     */
     public Panier(List<Produits> cartItems, Utilisateurs utilisateur, int panierId) {
         this.cartItems = cartItems;
         this.utilisateur = utilisateur;
         this.panierId = panierId;
         this.prixTotale = calculateTotalPrice();
     }
+
     public Panier(List<Produits> cartItems, Utilisateurs utilisateur) {
         this.cartItems = cartItems;
         this.utilisateur = utilisateur;
         this.prixTotale = calculateTotalPrice();
     }
 
+    // Default constructor with empty implementation
     public Panier() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // This constructor is required for JavaFX FXML loading.
     }
 
     // Getters and setters for the remaining attributes
@@ -70,20 +66,17 @@ public class Panier {
         this.panierId = panierId;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
     // Calculate the total price of items in the cart
- private double calculateTotalPrice() {
-    return cartItems.stream()
-        .mapToDouble(item -> item.getPrix())
-        .sum();
-}
+    public double calculateTotalPrice() {
+        return cartItems.stream()
+            .mapToDouble(item -> item.getPrix())
+            .sum();
+    }
 
     public Object getUtilisateurs() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public int getQuantity() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-}
+}}

@@ -16,101 +16,59 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.Utilisateurs;
 import DB.MyDB;
+// ServiceUtilisateurs.java
+import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceUtilisateurs {
-    private final MyDB myConnection = MyDB.getInstance();
-    private final Connection connection = myConnection.getCnx();
+    private List<Utilisateurs> utilisateursList;
 
-    public void ajouterUser(Utilisateurs user) {
-        String req = "INSERT INTO utilisateurs (nom, prenom, mdp, email, role) VALUES (?, ?, ?, ?, ?)";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(req);
-            preparedStatement.setString(1, user.getNom());
-            preparedStatement.setString(2, user.getPrenom());
-            preparedStatement.setString(3, user.getmdp());
-            preparedStatement.setString(4, user.getemail());
-            preparedStatement.setString(5, user.getRole());
-            preparedStatement.executeUpdate();
-            System.out.println("Utilisateur ajouté avec succès!");
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceUtilisateurs.class.getName()).log(Level.SEVERE, null, ex);
+    public ServiceUtilisateurs() {
+        utilisateursList = new ArrayList<>();
+    }
+
+    public void ajouterUser(Utilisateurs utilisateur) {
+        utilisateursList.add(utilisateur);
+    }
+
+    public void afficherUser() {
+        for (Utilisateurs utilisateur : utilisateursList) {
+            System.out.println(utilisateur.getNom() + " " + utilisateur.getPrenom());
         }
     }
 
-    public List<Utilisateurs> afficherUser() {
-        List<Utilisateurs> users = new ArrayList<>();
-        String req = "SELECT * FROM utilisateurs WHERE 1";
-        try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(req);
-            while (resultSet.next()) {
-                Utilisateurs user = new Utilisateurs();
-                user.setId(resultSet.getInt("Id"));
-                user.setNom(resultSet.getString("Nom"));
-                user.setPrenom(resultSet.getString("Prenom"));
-                user.setmdp(resultSet.getString("mdp"));
-                user.setemail(resultSet.getString("email"));
-                user.setRole(resultSet.getString("role"));
-                users.add(user);
+    public void modifierUser(int id, String nom, String prenom, String email, String mdp, String role) {
+        for (Utilisateurs utilisateur : utilisateursList) {
+            if (utilisateur.getId() == id) {
+                utilisateur.setNom(nom);
+                utilisateur.setPrenom(prenom);
+                utilisateur.setEmail(email);
+                utilisateur.setMdp(mdp);
+                utilisateur.setRole(role);
+                break;
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceUtilisateurs.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return users;
     }
 
-    public void modifierUser(Utilisateurs user) {
-        String req = "UPDATE utilisateurs SET nom=?, prenom=?, mdp=?, email=?, role=? WHERE id=?";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(req);
-            preparedStatement.setString(1, user.getNom());
-            preparedStatement.setString(2, user.getPrenom());
-            preparedStatement.setString(3, user.getmdp());
-            preparedStatement.setString(4, user.getemail());
-            preparedStatement.setString(5, user.getRole());
-            preparedStatement.setInt(6, user.getId());
-            int rowsUpdated = preparedStatement.executeUpdate();
-            if (rowsUpdated > 0) {
-                System.out.println("User updated successfully!");
-            } else {
-                System.out.println("No user found with the given ID.");
+    public void deleteUser(int id) {
+        Utilisateurs utilisateurToRemove = null;
+        for (Utilisateurs utilisateur : utilisateursList) {
+            if (utilisateur.getId() == id) {
+                utilisateurToRemove = utilisateur;
+                break;
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceUtilisateurs.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (utilisateurToRemove != null) {
+            utilisateursList.remove(utilisateurToRemove);
         }
     }
 
-    public void deleteUser(Utilisateurs user) {
-        String req = "DELETE FROM utilisateurs WHERE id=?";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(req);
-            preparedStatement.setInt(1, user.getId());
-            preparedStatement.executeUpdate();
-            System.out.println("Utilisateur supprimé avec succès!");
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceUtilisateurs.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public Utilisateurs getUserById(int userId) {
-        Utilisateurs user = null;
-        String req = "SELECT * FROM utilisateurs WHERE id = ?";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(req);
-            preparedStatement.setInt(1, userId);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                user = new Utilisateurs();
-                user.setId(resultSet.getInt("id"));
-                user.setNom(resultSet.getString("Nom"));
-                user.setPrenom(resultSet.getString("Prenom"));
-                user.setmdp(resultSet.getString("mdp"));
-                user.setemail(resultSet.getString("email"));
-                user.setRole(resultSet.getString("role"));
+    public Utilisateurs getUserById(int id) {
+        for (Utilisateurs utilisateur : utilisateursList) {
+            if (utilisateur.getId() == id) {
+                return utilisateur;
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(ServiceUtilisateurs.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return user;
+        return null; // User not found
     }
 }

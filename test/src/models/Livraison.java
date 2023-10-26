@@ -5,6 +5,11 @@
  */
 package models;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  *
  * @author 
@@ -112,11 +117,42 @@ public class Livraison {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public int getID() {
+   
+
+   public int getID() {
+        try (Connection connection = getConnection()) {
+            String query = "SELECT id FROM livraison WHERE ..."; // Replace ... with your conditions
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt("id");
+            } else {
+                throw new RuntimeException("ID not found in the database");
+            }
+        } catch (SQLException e) {
+            // Handle any exceptions that occur during database operations
+            e.printStackTrace();
+            throw new RuntimeException("Failed to retrieve ID from the database");
+        }
+    }
+    
+
+    public String getStatus() {
+    if (nbre_commandes > 0) {
+        return "In Transit";
+    } else if (nbre_commandes == 0) {
+        return "Completed";
+    } else {
+        return "Unknown";
+    }
+}
+
+    private int retrieveIDFromDatabase() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public int getID(int i) {
+    private Connection getConnection() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+   
 }
