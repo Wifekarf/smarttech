@@ -14,12 +14,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import models.Livraison;
 
 public class FXMLstatisticController implements Initializable {
 
     @FXML
     private BarChart<String, Integer> chartDelivery;
+    @FXML
+    private Button btnretouuur;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -54,4 +62,29 @@ public class FXMLstatisticController implements Initializable {
             ex.printStackTrace();
         }
     }
+    @FXML
+private void onBackToClick(ActionEvent event) {
+    try {
+        // Load the FXMLProduit view
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLacceuil.fxml"));
+        Parent root = loader.load();
+
+        // Get the controller of the FXMLProduit view
+        FXMLacceuilController acceuilController = loader.getController();
+
+        // Set the stage in the FXMLProduit controller
+        Stage newStage = new Stage(); // Create a new stage for the new scene
+        acceuilController.setStage(newStage);
+
+        // Set the FXMLProduit view as the new scene on the new stage
+        newStage.setScene(new Scene(root));
+        newStage.show(); // Show the new stage
+
+        // Close the current stage
+        Stage currentStage = (Stage) btnretouuur.getScene().getWindow();
+        currentStage.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }

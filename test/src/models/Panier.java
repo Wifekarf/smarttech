@@ -1,38 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package models; 
+package models;
 
+import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Panier {
-    private List<Produits> cartItems; 
+    private List<Produits> cartItems;
     private double prixTotale;
-    private Utilisateurs utilisateur; 
+    private Utilisateurs utilisateur;
     private int panierId;
-    private int quantity;
+
+    public Panier() {
+        cartItems = new ArrayList<>();
+        prixTotale = 0.0;
+    }
 
     public Panier(List<Produits> cartItems, Utilisateurs utilisateur, int panierId) {
-        this.cartItems = cartItems;
-        this.utilisateur = utilisateur;
-        this.panierId = panierId;
-        this.prixTotale = calculateTotalPrice();
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public Panier(List<Produits> cartItems, Utilisateurs utilisateur) {
-        this.cartItems = cartItems;
-        this.utilisateur = utilisateur;
-        this.prixTotale = calculateTotalPrice();
-    }
-
-    // Default constructor with empty implementation
-    public Panier() {
-        // This constructor is required for JavaFX FXML loading.
-    }
-
-    // Getters and setters for the remaining attributes
 
     public List<Produits> getCartItems() {
         return cartItems;
@@ -66,17 +52,22 @@ public class Panier {
         this.panierId = panierId;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public void addProductToCart(Produits product) {
+        cartItems.add(product);
+        prixTotale += product.getPrix();
     }
 
-    // Calculate the total price of items in the cart
-    public double calculateTotalPrice() {
-        return cartItems.stream()
-            .mapToDouble(item -> item.getPrix())
-            .sum();
+    // Implement this method to return an ObservableList of products in the cart
+    public ObservableList<Produits> getProducts() {
+        ObservableList<Produits> productsList = FXCollections.observableArrayList(cartItems);
+        return productsList;
     }
 
-    public Object getUtilisateurs() {
+    public void removeProductFromCart(Produits selectedProduct) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-}}
+    }
+
+    public void clearCart() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+}

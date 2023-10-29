@@ -17,11 +17,15 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import models.Livraison;
@@ -56,16 +60,34 @@ public class FXMLafficherDeliveryController {
             myListeView.setOnMouseClicked(this::handleListViewSelection);
 
             btnsupprimer.setOnAction(event -> {
-                if (selectedLivraisonToDelete != null) {
-                    try {
-                        sp.supprimerLivraison(selectedLivraisonToDelete.getIdLivraison());
-                        obs.remove(selectedLivraisonToDelete);
-                        selectedLivraisonToDelete = null;
-                    } catch (SQLException ex) {
-                        Logger.getLogger(FXMLafficherDeliveryController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            });
+    if (selectedLivraisonToDelete != null) {
+        // Create a confirmation dialog
+        Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmationDialog.setTitle("Confirmation");
+        confirmationDialog.setHeaderText("Delete Item");
+        confirmationDialog.setContentText("Are you sure you want to delete this item?");
+
+        // Customize the buttons of the confirmation dialog
+        ButtonType yesButton = new ButtonType("Yes", ButtonData.OK_DONE);
+        ButtonType noButton = new ButtonType("No", ButtonData.CANCEL_CLOSE);
+        confirmationDialog.getButtonTypes().setAll(yesButton, noButton);
+
+        // Show the confirmation dialog and wait for the user's response
+        Optional<ButtonType> result = confirmationDialog.showAndWait();
+
+        if (result.isPresent() && result.get() == yesButton) {
+            // User clicked "Yes," proceed with deletion
+            try {
+                sp.supprimerLivraison(selectedLivraisonToDelete.getIdLivraison());
+                obs.remove(selectedLivraisonToDelete);
+                selectedLivraisonToDelete = null;
+            } catch (SQLException ex) {
+                Logger.getLogger(FXMLafficherDeliveryController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+});
+
 
             btnmodifier1.setOnAction(event -> {
                 if (selectedLivraisonToModify != null) {

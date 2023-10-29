@@ -21,34 +21,41 @@ public class PanierService {
     }
 
     public Panier getPanierById(int panierId) throws SQLException {
-        Utilisateurs utilisateur = null;
-        List<Produits> cartItems = new ArrayList<>();
+    Utilisateurs utilisateur = null;
+    List<Produits> cartItems = new ArrayList<>();
 
-        // Retrieve Utilisateurs information based on panier_id
-        String utilisateurQuery = "SELECT * FROM utilisateur_cart_items WHERE panier_id = ?";
-        try (PreparedStatement utilisateurStatement = connexion.prepareStatement(utilisateurQuery)) {
-            utilisateurStatement.setInt(1, panierId);
-            ResultSet utilisateurResult = utilisateurStatement.executeQuery();
-            if (utilisateurResult.next()) {
-                int userId = utilisateurResult.getInt("utilisateur_id");
-                utilisateur = getUtilisateursById(userId);
-            }
+    // Retrieve Utilisateurs information based on panier_id
+    String utilisateurQuery = "SELECT * FROM utilisateur_cart_items WHERE panier_id = ?";
+    try (PreparedStatement utilisateurStatement = connexion.prepareStatement(utilisateurQuery)) {
+        utilisateurStatement.setInt(1, panierId);
+        ResultSet utilisateurResult = utilisateurStatement.executeQuery();
+        if (utilisateurResult.next()) {
+            int userId = utilisateurResult.getInt("utilisateur_id");
+            utilisateur = getUtilisateursById(userId);
         }
-
-        // Retrieve cart items based on panier_id
-        String cartItemsQuery = "SELECT * FROM cart_items WHERE panier_id = ?";
-        try (PreparedStatement cartItemsStatement = connexion.prepareStatement(cartItemsQuery)) {
-            cartItemsStatement.setInt(1, panierId);
-            ResultSet cartItemsResult = cartItemsStatement.executeQuery();
-            while (cartItemsResult.next()) {
-                int productId = cartItemsResult.getInt("id_produit");
-                Produits produit = getProductById(productId);
-                cartItems.add(produit);
-            }
-        }
-
-        return new Panier(cartItems, utilisateur, panierId);
     }
+
+    // Retrieve cart items based on panier_id
+    String cartItemsQuery = "SELECT * FROM cart_items WHERE panier_id = ?";
+    try (PreparedStatement cartItemsStatement = connexion.prepareStatement(cartItemsQuery)) {
+        cartItemsStatement.setInt(1, panierId);
+        ResultSet cartItemsResult = cartItemsStatement.executeQuery();
+        while (cartItemsResult.next()) {
+            int productId = cartItemsResult.getInt("id_produit");
+            Produits produit = getProductById(productId);
+            cartItems.add(produit);
+        }
+    }
+
+    // Instead of creating a new Panier instance, update the existing Panier with the retrieved data
+    Panier existingPanier = new Panier(); // Initialize with an empty cart
+    existingPanier.setCartItems(cartItems);
+    existingPanier.setUtilisateur(utilisateur);
+    existingPanier.setPanierId(panierId);
+
+    return existingPanier;
+}
+
 
     private Utilisateurs getUtilisateursById(int userId) {
         Utilisateurs utilisateur = null;
@@ -167,5 +174,9 @@ public class PanierService {
             deletePanierStatement.setInt(1, panierIdToDelete);
             deletePanierStatement.executeUpdate();
         }
+    }
+
+    public List<Produits> getAllProducts() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

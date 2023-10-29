@@ -5,7 +5,6 @@
  */
 package models;
 
-// Utilisateurs.java
 public class Utilisateurs {
     private int id;
     private String nom;
@@ -23,6 +22,18 @@ public class Utilisateurs {
         this.role = role;
     }
 
+    public Utilisateurs(String nom, String prenom, String email, String mdp, String role) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.mdp = mdp;
+        this.role = role;
+    }
+
+    public Utilisateurs(String sampleUser, String userexamplecom, String password, String role) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Utilisateurs(int id, String username, String email, String string, String string0) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -31,7 +42,6 @@ public class Utilisateurs {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -78,5 +88,33 @@ public class Utilisateurs {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "Utilisateurs{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", mdp='" + mdp + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    public void setmdp(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setemail(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getmdp() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getemail() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

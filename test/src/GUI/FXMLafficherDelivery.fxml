@@ -3,57 +3,36 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLafficherDeliveryController">
    <children>
-      <Pane layoutX="-7.0" layoutY="-2.0" prefHeight="418.0" prefWidth="639.0" style="-fx-background-color: beige;">
+      <Pane layoutY="-1.0" prefHeight="418.0" prefWidth="639.0" style="-fx-background-color: FBECB2;">
          <children>
             <ListView fx:id="myListeView" layoutX="33.0" layoutY="96.0" prefHeight="226.0" prefWidth="591.0" />
-            <Button fx:id="btnupdate" layoutX="24.0" layoutY="349.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="131.0" text="Update" textFill="#2c2fef">
-               <graphic>
-                  <ImageView fitHeight="19.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/icon-for-update-15.jpg" />
-                     </image>
-                  </ImageView>
-               </graphic>
+            <Button fx:id="btnupdate" layoutX="33.0" layoutY="330.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Update" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="16.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="btnmodifier1" layoutX="174.0" layoutY="348.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" text="Modifier" textFill="#097914">
-               <graphic>
-                  <ImageView fitHeight="27.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/icon-edit.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+            <Button fx:id="btnmodifier1" layoutX="228.0" layoutY="329.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Modifier" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="17.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="btnsupprimer" layoutX="353.0" layoutY="349.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" text="Supprimer" textFill="#f21111">
-               <graphic>
-                  <ImageView fitHeight="22.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../Downloads/delete%20red.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+            <Button fx:id="btnsupprimer" layoutX="439.0" layoutY="330.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="160.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Supprimer" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="16.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Label contentDisplay="CENTER" layoutX="174.0" layoutY="24.0" prefHeight="35.0" prefWidth="309.0" text="delivery person list" textFill="#cf0b77">
+            <Label contentDisplay="CENTER" layoutX="130.0" layoutY="28.0" prefHeight="35.0" prefWidth="309.0" text="delivery person list" textFill="#2f0ccf">
                <font>
-                  <Font name="Bauhaus 93" size="31.0" />
+                  <Font name="System Bold Italic" size="31.0" />
                </font>
             </Label>
-            <Pane layoutX="10.0" layoutY="72.0" prefHeight="4.0" prefWidth="633.0" style="-fx-background-color: black;" />
-            <Button fx:id="btnStatestiquee" layoutX="527.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleBtnStatestiquee" prefHeight="38.0" prefWidth="99.0" text="voir statestique" />
+            <Button fx:id="btnStatestiquee" layoutX="483.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleBtnStatestiquee" prefHeight="38.0" prefWidth="149.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="voir statestique" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Button>
          </children>
       </Pane>
    </children>

@@ -31,12 +31,25 @@ public class Produits {
         this.nom_produit = nom_produit;
         this.image = image;
     }
+     private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 
     public Produits(int product_id, float prix, String description, String nom_produit) {
         this.product_id = product_id;
         this.prix = prix;
         this.description = description;
         this.nom_produit = nom_produit;
+    }
+
+    public Produits(int id, String description, double price) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     // Getter and setter methods
@@ -89,11 +102,47 @@ public class Produits {
         return products;
     }
 
+    public Object prixProperty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void descriptionProperty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void nom_produitProperty() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getIdP() {
-        return product_id;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void setIdP(int product_id) {
-        this.product_id = product_id;
+    this.product_id = product_id;
+}
+
+    public String getProductName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getProduitsName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   @Override
+    public String toString() {
+        return "ID: " + product_id + " | Nom: " + nom_produit + " | Description: " + description + " | Prix: " + prix;
+    }
+
+    public String getId() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getPrice() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public String getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

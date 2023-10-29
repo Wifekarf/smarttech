@@ -67,4 +67,8 @@ public class ProduitsService {
         ps.setInt(1, produitIdToDelete);
         ps.executeUpdate();
     }
+
+    public List<Produits> getAllProducts() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

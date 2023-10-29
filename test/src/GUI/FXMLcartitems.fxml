@@ -4,22 +4,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="btnsupP" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLcartitemsController">
+<AnchorPane id="AnchorPane" fx:id="btnsupP" prefHeight="400.0" prefWidth="724.0" style="-fx-background-color: FBECB2;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLcartitemsController">
    <children>
-      <ListView fx:id="myListViewCart" layoutX="107.0" layoutY="89.0" prefHeight="200.0" prefWidth="368.0" />
-      <Button fx:id="btnconfirmer" layoutX="107.0" layoutY="301.0" mnemonicParsing="false" onAction="#onConfirmerClick" prefHeight="26.0" prefWidth="124.0" text="Confirmer">
+      <ListView fx:id="cartProductList" layoutX="107.0" layoutY="89.0" prefHeight="200.0" prefWidth="509.0" />
+      <Button fx:id="btnconfirmer" layoutX="119.0" layoutY="300.0" mnemonicParsing="false" onAction="#onConfirmerClick" prefHeight="31.0" prefWidth="156.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Confirmer" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="19.0" />
-         </font></Button>
-      <Label contentDisplay="CENTER" layoutX="199.0" layoutY="11.0" prefHeight="54.0" prefWidth="275.0" text="Panier List " textAlignment="CENTER" textFill="#d9159e" textOverrun="CENTER_ELLIPSIS">
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label contentDisplay="CENTER" layoutX="246.0" layoutY="17.0" prefHeight="54.0" prefWidth="275.0" text="Panier List" textAlignment="CENTER" textFill="#3516d9" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Pane layoutY="66.0" prefHeight="2.0" prefWidth="614.0" style="-fx-background-color: black;" />
-      <Button fx:id="SupPanier" layoutX="308.0" layoutY="309.0" mnemonicParsing="false" onAction="#onDeleteItemClick" prefHeight="26.0" prefWidth="98.0" text="Supprimer" />
+      <Button fx:id="SupPanier" layoutX="439.0" layoutY="300.0" mnemonicParsing="false" onAction="#onDeleteItemClick" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font></Button>
+      <Button fx:id="btnincreaseQuantity" layoutX="35.0" layoutY="174.0" mnemonicParsing="false" onAction="#onIncreaseQuantityClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="+" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Button fx:id="btndecreaseQuantity" layoutX="37.0" layoutY="216.0" mnemonicParsing="false" onAction="#onDecreaseQuantityClick" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="-" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnbackto" layoutX="11.0" layoutY="14.0" mnemonicParsing="false" onAction="#onBackToClick" prefHeight="30.0" prefWidth="96.0" style="-fx-background-color: D4AC0D; -fx-background-radius: 10;" text="return" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>
